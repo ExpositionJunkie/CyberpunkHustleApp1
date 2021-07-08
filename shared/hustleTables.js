@@ -2,7 +2,8 @@ export const HUSTLETABLES = [
   {
     id: 0,
     name: "Rockerboy",
-    img: "images/rockerboy.png",
+    img: "/images/rockerboy.png",
+    avatar: "/images/rockerboyAvatar.png",
     tableArr: [
       [`Played a small local gig.`, 200, 300, 600],
       [`No gigs or jobs to be had this week.`, 0, 100, 300],
@@ -26,7 +27,8 @@ export const HUSTLETABLES = [
   {
     id: 1,
     name: "Solo",
-    img: "images/solo.png",
+    img: "/images/solo.png",
+    avatar: "/images/soloAvatar.png",
     tableArr: [
       [`Bodyguard work, low-end client.`, 100, 200, 500],
       [`Bodyguard work, high-end client.`, 200, 300, 600],
@@ -39,7 +41,8 @@ export const HUSTLETABLES = [
   {
     id: 2,
     name: "Netrunner",
-    img: "images/netrunner.png",
+    img: "/images/netrunner.png",
+    avatar: "/images/netrunnerAvatar.png",
     tableArr: [
       [`Cracked a small system and sold the data.`, 100, 200, 500],
       [`Cracked a major Corporate system and sold the data.`, 200, 300, 600],
@@ -67,7 +70,8 @@ export const HUSTLETABLES = [
   {
     id: 3,
     name: "Tech",
-    img: "images/tech.png",
+    img: "/images/tech.png",
+    avatar: "/images/techAvatar.png",
     tableArr: [
       [`No jobs this week.`, 0, 100, 300],
       [`Rebuilt some tech you scavenged in the Combat Zone.`, 100, 200, 500],
@@ -90,7 +94,8 @@ export const HUSTLETABLES = [
   {
     id: 4,
     name: "Medtech",
-    img: "images/medtech.png",
+    img: "/images/medtech.png",
+    avatar: "/images/medtechAvatar.png",
     tableArr: [
       [`Patched up someone after a firefight.`, 100, 200, 500],
       [`Sold cyberware from a 'failed' medical case.`, 200, 300, 600],
@@ -123,7 +128,8 @@ export const HUSTLETABLES = [
   {
     id: 5,
     name: "Media",
-    img: "images/media.png",
+    img: "/images/media.png",
+    avatar: "/images/mediaAvatar.png",
     tableArr: [
       [
         `Wrote an expose that covered a major topic, 
@@ -154,7 +160,8 @@ export const HUSTLETABLES = [
   {
     id: 6,
     name: "Lawman",
-    img: "images/lawman.png",
+    img: "/images/lawman.png",
+    avatar: "/images/lawmanAvatar.png",
     tableArr: [
       [`Made a few minor busts, business as usual.`, 100, 200, 500],
       [
@@ -189,7 +196,8 @@ export const HUSTLETABLES = [
   {
     id: 7,
     name: "Exec",
-    img: "images/exec.png",
+    img: "/images/exec.png",
+    avatar: "/images/execAvatar.png",
     tableArr: [
       [
         `Landed a moderate success on a project, earned a reward bonus.`,
@@ -222,7 +230,9 @@ export const HUSTLETABLES = [
   {
     id: 8,
     name: "Fixer",
-    img: "images/fixer.png",
+    img: "/images/fixer.png",
+    avatar: "/images/fixerAvatar.png",
+    roll1: [`Got a Media some information for a good bribe.`, 200, 300, 600],
     tableArr: [
       [`Got a Media some information for a good bribe.`, 200, 300, 600],
       [`Got Rocker a good Gig for your 12% fee.`, 200, 300, 600],
@@ -255,7 +265,8 @@ export const HUSTLETABLES = [
   {
     id: 9,
     name: "Nomad",
-    img: "images/nomad.png",
+    img: "/images/nomad.png",
+    avatar: "/images/nomadAvatar.png",
     tableArr: [
       [`Made a legit shipment.`, 100, 200, 500],
       [`Protected a shipment.`, 100, 200, 500],

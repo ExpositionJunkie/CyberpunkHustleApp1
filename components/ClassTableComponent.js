@@ -44,11 +44,6 @@ function ClassTable({ hustle }) {
   }
   return <View />;
 }
-/* 
-function ClassTable(props) {
-  return <RenderClassTable hustle={props.hustle} />;
-}
- */
 
 const styles = StyleSheet.create({
   description: {

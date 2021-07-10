@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import PlayerForm from "./PlayerForm";
 
 class Home extends Component {
@@ -10,11 +10,23 @@ class Home extends Component {
   render() {
     return (
       <View>
-        <Text>Home Component</Text>
-        <PlayerForm />
+        <Text style={styles.headerTxt}>Do the Hustle!</Text>
+        <View style={styles.formContainer}>
+          <PlayerForm />
+        </View>
       </View>
     );
   }
 }
+const styles = StyleSheet.create({
+  headerTxt: {
+    fontSize: 25,
+    alignSelf: "center",
+    marginTop: 30,
+  },
+  formContainer: {
+    margin: 30,
+  },
+});
 
 export default Home;

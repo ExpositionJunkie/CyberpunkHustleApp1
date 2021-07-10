@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Constants from "expo-constants";
-import { View, Platform } from "react-native";
+import { View, Platform, StyleSheet } from "react-native";
+import { Icon } from "react-native-elements";
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 import { createDrawerNavigator } from "react-navigation-drawer";
@@ -10,7 +11,19 @@ import Home from "./HomeComponent";
 
 const ClassDirectoryNavigator = createStackNavigator(
   {
-    ClassDirectory: { screen: ClassDirectory },
+    ClassDirectory: {
+      screen: ClassDirectory,
+      navigationOptions: ({ navigation }) => ({
+        headerLeft: (
+          <Icon
+            name="list"
+            type="font-awesome"
+            iconStyle={styles.stackIcon}
+            onPress={() => navigation.toggleDrawer()}
+          />
+        ),
+      }),
+    },
     ClassTable: { screen: ClassTable },
   },
   {
@@ -20,8 +33,8 @@ const ClassDirectoryNavigator = createStackNavigator(
         backgroundColor: "black",
       },
       headerTintColor: "red",
-      heaederTitleStyle: {
-        color: "White",
+      headerTitleStyle: {
+        color: "red",
       },
     },
   }
@@ -32,7 +45,7 @@ const HomeNavigator = createStackNavigator(
     Home: { screen: Home },
   },
   {
-    defaultNavigationOptions: {
+    defaultNavigationOptions: ({ navigation }) => ({
       headerStyle: {
         backgroundColor: "black",
       },
@@ -40,14 +53,27 @@ const HomeNavigator = createStackNavigator(
       headerTitleStyle: {
         color: "red",
       },
-    },
+      headerLeft: (
+        <Icon
+          name="dice"
+          type="font-awesome-5"
+          iconStyle={styles.stackIcon}
+          onPress={() => navigation.toggleDrawer()}
+        />
+      ),
+    }),
   }
 );
 
 const MainNavigator = createDrawerNavigator(
   {
     Home: { screen: HomeNavigator },
-    ClassDirectory: { screen: ClassDirectoryNavigator },
+    ClassDirectory: {
+      screen: ClassDirectoryNavigator,
+      navigationOptions: {
+        drawerLabel: "Class Hustle Tables",
+      },
+    },
   },
   {
     drawerBackgroundColor: "red",
@@ -70,6 +96,17 @@ class Main extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  stackIcon: {
+    marginLeft: 10,
+    color: "red",
+    fontSize: 24,
+  },
+});
 
 export default Main;
 

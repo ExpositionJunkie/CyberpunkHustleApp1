@@ -15,7 +15,7 @@ class ClassDirectory extends Component {
   }
 
   static navigationOptions = {
-    title: "ClassDirectory",
+    title: "Class Hustle Tables",
   };
 
   render() {

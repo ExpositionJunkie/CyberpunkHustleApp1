@@ -23,6 +23,7 @@ function RenderTable({ hustle }) {
           {hustle.tableArr.map((hustleItem, index) => {
             return (
               <View key={index}>
+                <Text style={styles.description}>Roll: {index + 1}</Text>
                 <Text style={styles.description}>{hustleItem.description}</Text>
                 <View style={styles.lvlContainer}>
                   <Text style={styles.lvl1}>
@@ -69,9 +70,12 @@ class ClassTable extends Component {
 }
 
 const styles = StyleSheet.create({
+  rollText: {
+    fontSize: 20,
+  },
   description: {
     fontSize: 18,
-    marginTop: 15,
+    marginTop: 10,
   },
   lvlContainer: {
     flexDirection: "row",

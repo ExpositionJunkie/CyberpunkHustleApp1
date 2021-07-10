@@ -1,8 +1,10 @@
+import * as All from "../assets/index";
+
 export const HUSTLETABLES = [
   {
     id: 0,
     name: "Rockerboy",
-    img: "/images/rockerboy.png",
+    img: require("./images/rockerboy.png"),
     avatar: "/images/rockerboyAvatar.png",
     tableArr: [
       {

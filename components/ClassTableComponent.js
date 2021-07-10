@@ -1,6 +1,7 @@
 import React from "react";
 import { Text, View, StyleSheet, ScrollView } from "react-native";
 import { Card, Divider } from "react-native-elements";
+import * as All from "../assets/index";
 
 function ClassTable({ hustle }) {
   if (hustle) {
@@ -17,7 +18,7 @@ function ClassTable({ hustle }) {
       <ScrollView>
         <Card
           featuredTitle={hustle.name}
-          image={require("../assets/images/rockerboy.png")}
+          image={require("./images/rockerboy.png")}
         >
           {hustle.tableArr.map((hustleItem, index) => {
             return (

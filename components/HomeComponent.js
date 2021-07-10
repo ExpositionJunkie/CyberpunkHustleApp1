@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { View, Text } from "react-native";
+import PlayerForm from "./PlayerForm";
 
 class Home extends Component {
   static navigationOptions = {
@@ -10,6 +11,7 @@ class Home extends Component {
     return (
       <View>
         <Text>Home Component</Text>
+        <PlayerForm />
       </View>
     );
   }

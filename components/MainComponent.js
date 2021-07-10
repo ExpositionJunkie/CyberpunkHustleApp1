@@ -50,7 +50,7 @@ const MainNavigator = createDrawerNavigator(
     ClassDirectory: { screen: ClassDirectoryNavigator },
   },
   {
-    drawerBackgroundColor: "black",
+    drawerBackgroundColor: "red",
   }
 );
 

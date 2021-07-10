@@ -9,6 +9,12 @@ import ClassDirectory from "./ClassDirectoryComponent";
 import ClassTable from "./ClassTableComponent";
 import Home from "./HomeComponent";
 
+/*
+IMPORTANT NOTE: If navigator is not working correctly, you must make sure that 
+"react-native-reanimated": "1.0.0"
+Expo install likes to override this and set this to "2.2.0" which does not have the method that this version of navigation calls.
+*/
+
 const ClassDirectoryNavigator = createStackNavigator(
   {
     ClassDirectory: {

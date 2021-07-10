@@ -1,36 +1,42 @@
 import React, { Component } from "react";
-import { View } from "react-native";
-import { HUSTLETABLES } from "../shared/hustleTables";
+import Constants from "expo-constants";
+import { View, Platform } from "react-native";
+import { createStackNavigator } from "react-navigation-stack";
+import { createAppContainer } from "react-navigation";
 import ClassDirectory from "./ClassDirectoryComponent";
 import ClassTable from "./ClassTableComponent";
 
+const ClassDirectoryNavigator = createStackNavigator(
+  {
+    ClassDirectory: { screen: ClassDirectory },
+    ClassTable: { screen: ClassTable },
+  },
+  {
+    initialRouteName: "ClassDirectory",
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: "red",
+      },
+      headerTintColor: "red",
+      heaederTitleStyle: {
+        color: "black",
+      },
+    },
+  }
+);
+
+const AppNavigator = createAppContainer(ClassDirectoryNavigator);
+
 class Main extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      hustles: HUSTLETABLES,
-      selectedHustle: null,
-    };
-  }
-
-  onHustleSelect(hustleId) {
-    this.setState({ selectedHustle: hustleId });
-  }
-
   render() {
     return (
-      <View style={{ flex: 1 }}>
-        <ClassDirectory
-          hustles={this.state.hustles}
-          onPress={(hustleId) => this.onHustleSelect(hustleId)}
-        />
-        <ClassTable
-          hustle={
-            this.state.hustles.filter(
-              (hustle) => hustle.id === this.state.selectedHustle
-            )[0]
-          }
-        />
+      <View
+        style={{
+          flex: 1,
+          paddingTop: Platform.OS === "ios" ? 0 : Constants.statusBarHeight,
+        }}
+      >
+        <AppNavigator />
       </View>
     );
   }

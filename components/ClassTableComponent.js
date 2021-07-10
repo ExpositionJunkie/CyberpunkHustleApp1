@@ -1,8 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 import { Text, View, StyleSheet, ScrollView } from "react-native";
 import { Card, Divider } from "react-native-elements";
+import { HUSTLETABLES } from "../shared/hustleTables";
 
-function ClassTable({ hustle }) {
+function RenderTable({ hustle }) {
   if (hustle) {
     function HustleItem({ tbl }) {
       if (tbl) {
@@ -43,6 +44,28 @@ function ClassTable({ hustle }) {
     );
   }
   return <View />;
+}
+
+class ClassTable extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hustles: HUSTLETABLES,
+    };
+  }
+
+  static navigationOptions = {
+    title: "Class Tables",
+  };
+
+  render() {
+    const hustleId = this.props.navigation.getParam("hustleId");
+    const hustle = this.state.hustles.filter(
+      (hustle) => hustle.id === hustleId
+    )[0];
+
+    return <RenderTable hustle={hustle} />;
+  }
 }
 
 const styles = StyleSheet.create({

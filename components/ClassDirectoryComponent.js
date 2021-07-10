@@ -1,28 +1,45 @@
 import React, { Component } from "react";
 import { View, Text, FlatList } from "react-native";
 import { ListItem } from "react-native-elements";
+import { NavigationEvents } from "react-navigation";
 import * as All from "../assets";
+import { HUSTLETABLES } from "../shared/hustleTables";
 
-function ClassDirectory(props) {
-  console.log(props.hustle);
+class ClassDirectory extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hustles: HUSTLETABLES,
+      selectedHustle: null,
+    };
+  }
 
-  const renderDirectoryItem = ({ item }) => {
-    return (
-      <ListItem
-        title={item.name}
-        onPress={() => props.onPress(item.id)}
-        leftAvatar={{ source: require("../assets/images/rockerboyAvatar.png") }}
-      />
-    );
+  static navigationOptions = {
+    title: "ClassDirectory",
   };
 
-  return (
-    <FlatList
-      data={props.hustles}
-      renderItem={renderDirectoryItem}
-      keyExtractor={(item) => item.id.toString()}
-    />
-  );
+  render() {
+    const { navigate } = this.props.navigation;
+    const renderDirectoryItem = ({ item }) => {
+      return (
+        <ListItem
+          title={item.name}
+          onPress={() => navigate("ClassTable", { hustleId: item.id })}
+          leftAvatar={{
+            source: require("../assets/images/rockerboyAvatar.png"),
+          }}
+        />
+      );
+    };
+
+    return (
+      <FlatList
+        data={this.state.hustles}
+        renderItem={renderDirectoryItem}
+        keyExtractor={(item) => item.id.toString()}
+      />
+    );
+  }
 }
 
 export default ClassDirectory;

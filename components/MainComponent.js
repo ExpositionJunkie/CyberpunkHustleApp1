@@ -7,6 +7,7 @@ import { createAppContainer } from "react-navigation";
 import { createDrawerNavigator } from "react-navigation-drawer";
 import ClassDirectory from "./ClassDirectoryComponent";
 import ClassTable from "./ClassTableComponent";
+import RollHustle from "./RollHustle";
 import Home from "./HomeComponent";
 
 /*
@@ -68,6 +69,36 @@ const HomeNavigator = createStackNavigator(
         />
       ),
     }),
+  }
+);
+
+const RollHustleNavigator = createStackNavigator(
+  {
+    RollHustle: {
+      screen: RollHustle,
+      navigationOptions: ({ navigation }) => ({
+        headerLeft: (
+          <Icon
+            name="euro-sign"
+            type="font-awesome"
+            iconStyle={styles.stackIcon}
+            onPress={() => navigation.toggleDrawer()}
+          />
+        ),
+      }),
+    },
+  },
+  {
+    initialRouteName: "RollHustle",
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: "black",
+      },
+      headerTintColor: "red",
+      headerTitleStyle: {
+        color: "red",
+      },
+    },
   }
 );
 
